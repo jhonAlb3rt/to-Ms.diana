@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>flowers for you miss diana 🌸</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(#87ceeb, #fef6e4);
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .message {
+    position: absolute;
+    top: 20%;
+    width: 100%;
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+    color: #e91e63;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+
+  .ground {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 120px;
+    background: #4caf50;
+  }
+
+  .flower {
+    position: absolute;
+    bottom: 120px;
+    transform-origin: bottom center;
+    animation: sway 3s ease-in-out infinite;
+  }
+
+  @keyframes sway {
+    0%,100% { transform: rotate(-2deg); }
+    50% { transform: rotate(2deg); }
+  }
+
+  .stem {
+    width: 6px;
+    height: 90px;
+    background: #2e7d32;
+    margin: 0 auto;
+  }
+
+  .petals {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin: -20px auto 0;
+  }
+
+  .petal {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: pink;
+    border-radius: 50%;
+  }
+
+  .petal:nth-child(1) { top: 0; left: 10px; }
+  .petal:nth-child(2) { top: 10px; left: 0; }
+  .petal:nth-child(3) { top: 10px; right: 0; }
+  .petal:nth-child(4) { bottom: 0; left: 10px; }
+
+  .center {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    background: yellow;
+    border-radius: 50%;
+  }
+</style>
+</head>
+<body>
+
+<div class="message">flowers for you Ms Diana 🌸</div>
+<div class="ground"></div>
+
+<script>
+  const colors = ["#ff69b4", "#ffb6c1", "#ff8a80", "#f48fb1"];
+
+  function createFlower(x) {
+    const flower = document.createElement("div");
+    flower.className = "flower";
+    flower.style.left = x + "px";
+    flower.style.animationDuration = (2 + Math.random() * 2) + "s";
+
+    const stem = document.createElement("div");
+    stem.className = "stem";
+
+    const petals = document.createElement("div");
+    petals.className = "petals";
+
+    const color = colors[Math.floor(Math.random() * colors.length)];
+
+    for (let i = 0; i < 4; i++) {
+      const petal = document.createElement("div");
+      petal.className = "petal";
+      petal.style.background = color;
+      petals.appendChild(petal);
+    }
+
+    const center = document.createElement("div");
+    center.className = "center";
+    petals.appendChild(center);
+
+    flower.appendChild(petals);
+    flower.appendChild(stem);
+    document.body.appendChild(flower);
+  }
+
+  for (let i = 0; i < 7; i++) {
+    createFlower(120 + i * 150);
+  }
+</script>
+
+</body>
+</html>
