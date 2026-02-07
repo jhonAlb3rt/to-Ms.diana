@@ -1,0 +1,44 @@
+body {
+
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ffd6e8, #fff1f7)
+    font-family 'sugoe UI', sans-serif;
+
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0 ,0 , 0, 0.15);
+    max-width: 350px;
+
+}   
+
+.cat-img{
+    width: 220px;
+    height: auto;
+    border-radius: 15px;
+
+}
+
+h1 {
+    margin-top: 20px;
+    color: #ff5c8a;
+
+}
+
+p {
+
+    color: #555;
+    font-size: 18px;
+}
+
+body {
+    background-image: url(flat-background-national-nurses-week-celebration_23-2151263365\ -\ Copy.avif);
+}
